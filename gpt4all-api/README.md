@@ -13,6 +13,7 @@ docker compose up --build
 
 
 ### ignore this 
+
 This will run both the API and locally hosted GPU inference server. If you want to run the API without the GPU inference server, you can run:
 
 ```bash
