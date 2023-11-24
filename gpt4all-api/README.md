@@ -2,13 +2,8 @@
 ### Starting the app
 
 First change your working directory to `gpt4all/gpt4all-api`.
-
-Now you can build the FastAPI docker image. You only have to do this on initial build or when you add new dependencies to the requirements.txt file:
-```bash
-DOCKER_BUILDKIT=1 docker build -t gpt4all_api --progress plain -f gpt4all_api/Dockerfile.buildkit .
-```
-
-Then, start the backend with:
+Then add the zephyr-7B-alpha-GGUF to the models folder.
+You can find that here https://huggingface.co/TheBloke/zephyr-7B-alpha-GGUF/blob/main/zephyr-7b-alpha.Q4_K_M.gguf
 
 ```bash
 docker compose up --build
