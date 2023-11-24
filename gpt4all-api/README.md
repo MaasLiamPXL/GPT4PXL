@@ -5,10 +5,14 @@ First change your working directory to `gpt4all/gpt4all-api`.
 Then add the zephyr-7B-alpha-GGUF to the models folder.
 You can find that here https://huggingface.co/TheBloke/zephyr-7B-alpha-GGUF/blob/main/zephyr-7b-alpha.Q4_K_M.gguf
 
+Then you can start the docker container and start to use the api
+
 ```bash
 docker compose up --build
 ```
 
+
+### ignore this 
 This will run both the API and locally hosted GPU inference server. If you want to run the API without the GPU inference server, you can run:
 
 ```bash
