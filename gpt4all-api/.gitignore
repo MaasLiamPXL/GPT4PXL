@@ -87,7 +87,6 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -110,3 +109,5 @@ venv.bak/
 
 *.lock
 *.cache
+*.gguf
+
