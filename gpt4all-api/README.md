@@ -6,7 +6,9 @@ Then add the zephyr-7B-alpha-GGUF to the models folder.
 You can find that here https://huggingface.co/TheBloke/zephyr-7B-alpha-GGUF/blob/main/zephyr-7b-alpha.Q4_K_M.gguf
 
 Then you can start the docker container and start to use the api
-
+```bash
+python3 modelPull.py
+```
 ```bash
 docker compose up --build
 ```
