@@ -111,6 +111,22 @@ async def completions(request: CompletionRequest):
     '''
     Completes a GPT4All model response.
     '''
+
+
+    if request.prompt == "test":
+        return CompletionResponse(
+            id=str(uuid4()),
+            created=time.time(),
+            model=request.model,
+            choices=[dict(CompletionChoice(
+                text="Hello there stranger!",
+                index=0,
+                logprobs=-1,
+                finish_reason='stop'
+            ))],
+            usage={'prompt_tokens': 0, 'completion_tokens': 0, 'total_tokens': 0},
+        )
+    
     if settings.inference_mode == "gpu":
         params = request.dict(exclude={'model', 'prompt', 'max_tokens', 'n'})
         params["max_new_tokens"] = request.max_tokens
