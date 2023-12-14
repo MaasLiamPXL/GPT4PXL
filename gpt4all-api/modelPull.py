@@ -2,7 +2,7 @@ from huggingface_hub import hf_hub_download
 import os
 
 # Specify the filename to download
-selected_filename = "zephyr-7b-alpha.Q4_K_M.gguf"
+selected_filename = "llama-2-7b-32k-instruct.Q4_K_M.gguf"
 
 directory = os.getcwd()
 destination_path = os.path.join(directory, "gpt4all_api/models", selected_filename)
