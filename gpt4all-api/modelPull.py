@@ -13,5 +13,5 @@ if os.path.exists(destination_path):
 else:
     # Download the selected file
     print(f"Downloading '{selected_filename}'.")
-    hf_hub_download(repo_id="TheBloke/zephyr-7B-alpha-GGUF", filename=selected_filename, local_dir=directory + "/gpt4all_api/models", local_dir_use_symlinks=False)
+    hf_hub_download(repo_id="TheBloke/Llama-2-7B-32K-Instruct-GGUF", filename=selected_filename, local_dir=directory + "/gpt4all_api/models", local_dir_use_symlinks=False)
     print(f"File '{selected_filename}' downloaded successfully into the /models folder.")
