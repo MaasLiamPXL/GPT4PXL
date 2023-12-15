@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gpt4all-api
+  name: gpt4all-api
+spec:
+  ports:
+    
+name: "4891"
+    port: 4891
+    targetPort: 4891
+selector:
+  io.kompose.service: gpt4all-api
+status:
+  loadBalancer: {}

@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.31.2 (a92241f79)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gpt4all-api
+  name: gpt4all-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gpt4all-api
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yaml
+        kompose.version: 1.31.2 (a92241f79)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/gpt4all-api-default: "true"
+        io.kompose.service: gpt4all-api
+    spec:
+      containers:
+        
+args:
+/start-reload.sh
+      env:
+name: APP_ENVIRONMENT
+        value: dev
+name: LOGLEVEL
+      value: debug
+name: PORT
+    value: "4891"
+name: WEB_CONCURRENCY
+  value: "2"
+name: inference_mode
+value: cpu
+image: ferrej/gpt4pxl:test
+name: gpt4pxl
+ports:
+containerPort: 4891
+  hostPort: 4891
+  protocol: TCP
+resources: {}
+volumeMounts:
+mountPath: /models
+  name: gpt4all-api-claim1
+restartPolicy: Always
+volumes:
+name: gpt4all-api-claim1
+  hostPath:
+    path: /models# persistentVolumeClaim:# claimName: gpt4all-api-claim1
+status: {}
